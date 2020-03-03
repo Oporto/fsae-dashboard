@@ -2,11 +2,11 @@ var width = window.innerWidth/4,
     height = width,
     radius = Math.min(width, height) / 2 - 40;
 
-var r = d3.scaleLinear()
+var r = d3v5.scaleLinear()
     .domain([0, .5])
     .range([radius*1.2, 0]);
 
-var g_svg = d3.select("#g").append("svg").attr("height", height).attr("width", height)
+var g_svg = d3v5.select("#g").append("svg").attr("height", height).attr("width", height)
     .append("g")
   .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
@@ -25,7 +25,7 @@ gr.append("circle")
 var ga = g_svg.append("g")
     .attr("class", "a axis")
   .selectAll("g")
-    .data(d3.range(0, 360, 30))
+    .data(d3v5.range(0, 360, 30))
   .enter().append("g")
     .attr("transform", function(d) { return "rotate(" + -d + ")"; });
 
