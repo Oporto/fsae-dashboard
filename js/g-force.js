@@ -40,33 +40,39 @@ ga.append("text")
     .attr("transform", function(d) { return d < 270 && d > 90 ? "rotate(180 " + (radius + 6) + ",0)" : null; })
     .text(function(d) { return d + "°"; });
 
-dot = g_svg.append("circle")
+var dot = g_svg.append("circle")
         .attr('r', 5)
         .style("fill","red");
 
-vector = g_svg.append("line")
+var vectorG = g_svg.append("line")
+        .attr("x1",0)
+        .attr("y1",0)
         .attr("stroke","red");
 
-gtext = g_svg.append("text")
+var gtext = g_svg.append("text")
         .text("0g");
 
 function updateGForce(gx, gy){
-    console.log(gx,gy);
-    let rx = radius*gx/4;
-    let ry = -radius*gy/4;
-    let mag = Math.sqrt(Math.pow(gx, 2) + Math.pow(gy, 2));
-    let angle = Math.atan2(gy, gx) * 180 / Math.PI;
+  console.log(gx,gy);
+  let rx = radius*gx/4;
+  let ry = -radius*gy/4;
+  let mag = Math.sqrt(Math.pow(gx, 2) + Math.pow(gy, 2));
+  let angle = Math.atan2(gy, gx) * 180 / Math.PI;
 
-    vector.style("opacity",0);
-    gtext.style("opacity",0);
-    dot.transition().duration(10)
-        .attr("cx",rx)
-        .attr("cy",ry)
-        .on("end",() => {
-            vector.style("opacity",1).attr("x2",rx).attr("y2",ry);
-            gtext.style("opacity",1).text(()=>{
-                return mag.toFixed(2) + "g @ " + Math.round(angle) + "°";
-            })
-        })
+  vectorG.style("opacity",0);
+  gtext.style("opacity",0);
+  dot.transition().duration(10)
+      .attr("cx",rx)
+      .attr("cy",ry)
+      .on("end",() => {
+          vectorG.style("opacity",1).attr("x2",rx).attr("y2",ry);
+          gtext.style("opacity",1).text(()=>{
+              return mag.toFixed(2) + "g @ " + Math.round(angle) + "°";
+          })
+      })
 }
 updateGForce(0,0);
+
+setInterval(() => {
+  updateGForce((Math.random()-0.5)*3, (Math.random()-0.5)*3);
+}, 1000);
