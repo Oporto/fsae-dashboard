@@ -1,10 +1,10 @@
-function update(){
+function updateVS(){
+    console.log("hugh");
     fetch('https://rawdataendpoints-yyoqnujuaq-uk.a.run.app/processed_slice', {
       cache: "no-store"
     })
     .then((response) => response.json())
     .then((data) => {
-      console.log('Success:', data);
       updateGForce(data.gx,data.gy);
       updateStr(data.str);
       updateBar(data.slip);
@@ -14,4 +14,5 @@ function update(){
       console.error('Error:', error);
     });
   }
-setInterval(update(),500);
+
+window.setInterval(updateVS,500);
