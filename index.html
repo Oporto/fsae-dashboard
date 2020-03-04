@@ -60,19 +60,5 @@
   <script src="js/z-tilt.js"></script>
   <script src="js/str.js"></script>
   <script src="js/slip.js"></script>
-  <script>
-    function update(){
-      fetch('https://example.com/profile', {
-        cache: "no-store"
-      })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-    }
-    setInterval(update(),500);
-  </script>
+  <script src="js/stream.js"></script>
 </html>

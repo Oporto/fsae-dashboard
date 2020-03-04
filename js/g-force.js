@@ -74,5 +74,5 @@ function updateGForce(gx, gy){
 updateGForce(0,0);
 
 setInterval(() => {
-  updateGForce((Math.random()-0.5)*3, (Math.random()-0.5)*3);
+  //updateGForce((Math.random()-0.5)*3, (Math.random()-0.5)*3);
 }, 1000);

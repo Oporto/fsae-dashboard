@@ -36,5 +36,5 @@ function updateBar(ang){
 }
 
 setInterval(() => {
-    updateBar((Math.random()-0.5)*30);
+    //updateBar((Math.random()-0.5)*30);
 }, 1000);

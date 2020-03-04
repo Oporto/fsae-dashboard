@@ -64,7 +64,7 @@ function colorize(d){
     return d3.interpolateSpectral(_z+0.5);
 }
 
-function init(points, tilt){
+function updateTilt(points, tilt){
     processData(surface(points), 1000);
     tilt_text.text(()=>{
         return "Tilt of " + tilt[0] + "° on X and " + tilt[1] + "° on Y";
@@ -110,4 +110,4 @@ var pts = [
     {x: 2, y: 2, z:0}
 ];
 
-init(pts, [0,0]);
+//updateTilt(pts, [0,0]);

@@ -34,16 +34,16 @@ var vector = str_svg.append("line")
 
 var prev = 0;
 
-function updateStr(ang){
-    let change = prev-ang;
+function updateStr(angS){
+    let change = prev-angS;
     vector.transition().duration(200)
         .attr("transform",()=>{
             return "rotate("+change+")";
         }).on("end",()=>{
-            prev = ang;
+            prev = angS;
         })
 }
 
 setInterval(() => {
-  updateStr((Math.random()-0.5)*90);
+  //updateStr((Math.random()-0.5)*90);
 }, 1000);
