@@ -61,7 +61,7 @@ function updateGForce(gx, gy){
 
   vectorG.style("opacity",0);
   gtext.style("opacity",0);
-  dot.transition().duration(10)
+  dot.transition().duration(200)
       .attr("cx",rx)
       .attr("cy",ry)
       .on("end",() => {
