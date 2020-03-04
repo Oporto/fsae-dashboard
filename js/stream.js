@@ -15,4 +15,4 @@ function updateVS(){
     });
   }
 
-window.setInterval(updateVS,500);
+window.setInterval(updateVS,200);
