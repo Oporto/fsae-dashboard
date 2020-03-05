@@ -16,7 +16,6 @@ var prevSp = 0;
 
 function updateSpeed(angSp){
     let changeSpeed = Math.min(angSp/90,1);
-    //maxSpeed = Math.min(0,80);
     speedNum.transition()
       .duration(200)
       .style("fill",d3.interpolateTurbo(changeSpeed))
