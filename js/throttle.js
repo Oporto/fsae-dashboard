@@ -58,6 +58,6 @@ function updateThr(angThr){
         })
 }
 
-setInterval(() => {
+setIntervalThr(() => {
   //updateThr((Math.random()*0.5)*90);
 }, 1000);
