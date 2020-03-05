@@ -53,19 +53,24 @@ var gtext = g_svg.append("text")
         .text("0g");
 
 function updateGForce(gx, gy){
-  console.log(gx,gy);
   let rx = radius*gx/4;
   let ry = -radius*gy/4;
   let mag = Math.sqrt(Math.pow(gx, 2) + Math.pow(gy, 2));
   let angle = Math.atan2(gy, gx) * 180 / Math.PI;
 
-  vectorG.style("opacity",0);
+  vectorG.transition().duration(10)
+    .style("opacity",0)
+    .on("end", () =>{
+      vectorG.attr("x2",rx).attr("y2",ry);
+    });
   gtext.style("opacity",0);
   dot.transition().duration(200)
       .attr("cx",rx)
       .attr("cy",ry)
+      .attr("r",4 + mag)
+      .style("fill",d3.interpolateViridis(mag/3))
       .on("end",() => {
-          vectorG.style("opacity",1).attr("x2",rx).attr("y2",ry);
+          vectorG.style("opacity",1);
           gtext.style("opacity",1).text(()=>{
               return mag.toFixed(2) + "g @ " + Math.round(angle) + "°";
           })

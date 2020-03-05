@@ -44,12 +44,10 @@ function processData(data, tt){
         .append('path')
         .attr('class', '_3d')
         .attr('fill', colorize)
-        .attr('opacity', 0)
         .attr('stroke-opacity', 0.1)
         .merge(planes)
         .attr('stroke', 'black')
         .transition().duration(tt)
-        .attr('opacity', 1)
         .attr('fill', colorize)
         .attr('d', surface.draw);
 
@@ -60,12 +58,13 @@ function processData(data, tt){
 }
 
 function colorize(d){
-    var _z = (d[0].z + d[1].z + d[2].z + d[3].z)/4;
-    return d3.interpolateSpectral(_z+0.5);
+    var _z = (parseFloat(d[0].z) + parseFloat(d[1].z) + parseFloat(d[2].z) + parseFloat(d[3].z))/4;
+    console.log(_z)
+    return d3.interpolateViridis(_z+0.2);
 }
 
 function updateTilt(points, tilt){
-    processData(surface(points), 1000);
+    processData(surface(points), 200);
     tilt_text.text(()=>{
         return "Tilt of " + tilt[0] + "° on X and " + tilt[1] + "° on Y";
     })
