@@ -11,7 +11,7 @@ var speedNum = speed_svg.append("text")
     .attr("font-weight", 500)
     //.style("fill","black")
     //.style("fill",d3.interpolateRgb("blue","red")(d))
-    .style("font-size","50")
+    .style("font-size","45")
     .text("0 MPH")
 
 var prevSp = 0;

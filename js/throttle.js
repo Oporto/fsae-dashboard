@@ -1,10 +1,10 @@
-var width_thr = window.innerWidth/4,
-    height_thr = width_thr/2,
-    radius_thr = Math.max(width_thr, height_thr) /4;
+var width_thr = window.innerWidth/8,
+    height_thr = width_thr,
+    radius_thr = Math.max(width_thr, height_thr) /2;
 
 var thr_svg = d3v5.select("#thr").append("svg").attr("height", height_thr).attr("width", width_thr)
     .append("g")
-  .attr("transform", "translate(" + width_thr / 2 + "," + height_thr/1.2+ ")");
+  .attr("transform", "translate(" + 20 + "," + height_thr/1.2+ ")");
 
 var ga3 = thr_svg.append("g")
   .attr("class", "a axis")
