@@ -9,8 +9,6 @@ var speed_svg = d3v5.select("#speed").append("svg").attr("height", height_speed)
 var speedNum = speed_svg.append("text")
     .attr("x", -100)
     .attr("font-weight", 500)
-    //.style("fill","black")
-    //.style("fill",d3.interpolateRgb("blue","red")(d))
     .style("font-size","45")
     .text("0 MPH")
 

@@ -59,7 +59,7 @@ function processData(data, tt){
 
 function colorize(d){
     var _z = (parseFloat(d[0].z) + parseFloat(d[1].z) + parseFloat(d[2].z) + parseFloat(d[3].z))/4;
-    console.log(_z)
+    //console.log(_z)
     return d3.interpolateViridis(_z+0.2);
 }
 
