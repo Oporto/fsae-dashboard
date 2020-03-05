@@ -48,16 +48,16 @@ var vectorThr = thr_svg.append("line")
 var prevThr = 0;
 
 function updateThr(angThr){
-    let changeThr = prevThr-angThr;
+  let changeThr = prevThr-angThr;
 
-    vectorThr.transition().duration(10000)
-        .attr("transform",()=>{
-            return "rotate("+changeThr+")";
-        }).on("end",()=>{
-            prevThr = angThr;
-        })
+  vectorThr.transition().duration(200)
+    .attr("transform",()=>{
+      return "rotate("+changeThr+")";
+    }).on("end",()=>{
+      prevThr = angThr;
+    })
 }
 
-setIntervalThr(() => {
-  //updateThr((Math.random()*0.5)*90);
+setInterval(() => {
+  updateThr((Math.random()*0.5)*90);
 }, 1000);

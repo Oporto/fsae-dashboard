@@ -46,8 +46,7 @@ function updateSpeed(angSp){
     speedNum.text(()=>{
         return ((changeSpeed+90) + " MPH");
     })
-
-    vectorSp.transition().duration(10000)
+    vectorSp.transition().duration(200)
         .attr("transform",()=>{
             return "rotate("+changeSpeed+")";
         }).on("end",()=>{
@@ -55,6 +54,6 @@ function updateSpeed(angSp){
         })
 }
 
-setIntervalSp(() => {
-  //updateSpeed((Math.random()*0.5)*90);
+setInterval(() => {
+  updateSpeed((Math.random()*0.5)*90);
 }, 1000);
