@@ -14,4 +14,25 @@ function updateVS(){
     });
   }
 
-window.setInterval(updateVS,200);
+var streamInterval = window.setInterval(updateVS,200);
+
+// Create event listener for when slider changes
+
+// Add event listener to update output when slider value change
+slider.addEventListener( 'input', function( event ) {
+  if ( event.target.classList.contains( 'has-output-tooltip' ) ) {
+    // Get new output position
+    var newPosition = getSliderOutputPosition( event.target );
+
+    // Set output position
+    output.style[ 'left' ] = newPosition.position;
+  }
+
+  // Update output with slider value
+  streamInterval = window.setInterval(updateVS,event.target.value);
+  //output.value = event.target.value;
+} );
+
+
+
+

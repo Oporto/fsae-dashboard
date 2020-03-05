@@ -26,28 +26,54 @@
             <h2 class="subtitle">
               User interface developed by Ally Nicollela and Pedro de Vasconcellos Oporto for CS 480X - Final project
             </h2>
+            <input class="slider is-fullwidth" step="1" min="0" max="90" value="50" type="range">
+            <output for="sliderWithValue"></output>
           </div>
         </div>
     </section>
     <section class="tile is-ancestor">
         <div class="tile is-vertical is-6" id="leftHalf">
             <div class="tile is-parent" id="str_slip">
-                <div class="tile is-child is-info" id="str"></div>
-                <div class="tile is-child is-warning" id="slip"></div>
+                <div class="tile is-child is-info" id="str">
+                  <h1 class="title is-4 is-center">Steering</h1>
+                  <h2 class="subtitle is-5"></h2>
+                </div>
+                <div class="tile is-child is-warning" id="slip">
+                  <h1 class="title is-4 is-center">Slip</h1>
+                  <h2 class="subtitle is-5"></h2>
+                </div>
             </div>
             <div class="tile is-parent" id="g_z">
-                <div class="tile is-child is-danger" id="g"></div>
-                <div class="tile is-child is-success" id="z"></div>
+                <div class="tile is-child is-danger" id="g">
+                  <h1 class="title is-4 is-center">G Force</h1>
+                  <h2 class="subtitle is-5"></h2>
+                </div>
+                <div class="tile is-child is-success" id="z">
+                  <h1 class="title is-4 is-center">Z-Tilt</h1>
+                  <h2 class="subtitle is-5"></h2>
+                </div>
             </div>
             <div class="tile is-parent" id="track_p"S>
-                <div class="tile is-child is-info" id="track"></div>
+                <div class="tile is-child is-info" id="track">
+                  <h1 class="title is-4 is-center">Track</h1>
+                  <h2 class="subtitle is-5"></h2>
+                </div>
             </div>
         </div>
         <div class="tile is-vertical is-6" id="rightHalf">
             <div class="tile is-parent" id="gear_speed_thr">
-                <div class="tile is-child is-success" id="speed"></div>
-                <div class="tile is-child is-warning" id="thr"></div>
-                <div class="tile is-child is-info" id="gear"></div>
+                <div class="tile is-child is-success" id="speed">
+                  <h1 class="title is-4 is-center">Speed</h1>
+                  <h2 class="subtitle is-5">Miles per Hour</h2>
+                </div>
+                <div class="tile is-child is-warning" id="thr">
+                  <h1 class="title is-4 is-center">Throttle</h1>
+                  <h2 class="subtitle is-5"></h2>
+                </div>
+                <div class="tile is-child is-info" id="gear">
+                  <h1 class="title is-4 is-center">Gear Shift</h1>
+                  <h2 class="subtitle is-5"></h2>
+                </div>
             </div>
             <div class="tile is-parent">
                 <div class="tile is-child is-danger" id="car_plot"></div>
