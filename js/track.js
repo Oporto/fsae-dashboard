@@ -18,7 +18,6 @@ var line = d3.line()
 
     let repeat = () => {
         var data = d3.range(11).map(function(){return Math.random()*10})
-        console.log(data);
   
         track_svg.selectAll("path").remove();
   

@@ -9,7 +9,7 @@ var thr_svg = d3v5.select("#thr").append("svg").attr("height", height_thr).attr(
 var ga3 = thr_svg.append("g")
   .attr("class", "a axis")
 .selectAll("g")
-  .data(d3v5.range(0, 181, 45))
+  .data(d3v5.range(90, 181, 45))
 .enter().append("g")
   .attr("transform", function(d) { return "rotate(" + (d+181) + ")"; });
 
@@ -21,20 +21,18 @@ ga3.append("line")
 ga3.append("text")
   .attr("x", radius_thr + 6)
   .attr("dy", ".30em")
-  .style("text-anchor", function(d) { return d < 181 && d > 90 ? "end" : null; })
-  .attr("transform", function(d) { return d < 181 && d > 90 ? "rotate(180 " + (radius_thr+6) + ",0)" : null; })
+  .style("text-anchor", function(d) { return d > 181 && d < 90 ? "end" : null; })
+  .attr("transform", function(d) { return d > 181 && d < 90 ? "rotate(0 " + (radius_thr+6) + ",0)" : null; })
   .text(function(d) {
       if (d === 0){
-        return "0°";
+        return "100%";
       }
-    else if (d === 45) {
-        return "22.5°";
-    } else if (d === 90){
-        return "45°"
+    else if (d === 90){
+        return "0%"
     } else if (d === 135){
-        return "67.5°"
+        return "50%"
     } else {
-        return "90°" }
+        return "100%" }
     });
 
 var vectorThr = thr_svg.append("line")
@@ -43,21 +41,22 @@ var vectorThr = thr_svg.append("line")
   .attr("x1", 0)
   .attr("y1",-radius_thr)
   .attr("x2", 0)
-  .attr("y2",0);
-
-var prevThr = 0;
+  .attr("y2",0)
+  .attr("transform","rotate(45)");
 
 function updateThr(angThr){
-  let changeThr = prevThr-angThr;
-
+  let changeThr = 90*(angThr);
   vectorThr.transition().duration(200)
+    .attr("stroke",d3.interpolateTurbo(angThr))
+    .attr("stroke-width",3 + 2*angThr)
     .attr("transform",()=>{
       return "rotate("+changeThr+")";
-    }).on("end",()=>{
+    })
+    .on("end",()=>{
       prevThr = angThr;
     })
 }
 
 setInterval(() => {
-  updateThr((Math.random()*0.5)*90);
+  updateThr((Math.random()));
 }, 1000);

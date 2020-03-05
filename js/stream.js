@@ -1,5 +1,4 @@
 function updateVS(){
-    console.log("hugh");
     fetch('https://rawdataendpoints-yyoqnujuaq-uk.a.run.app/processed_slice', {
       cache: "no-store"
     })
