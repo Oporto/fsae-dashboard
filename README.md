@@ -1,6 +1,16 @@
 Final Project - Interactive Data Visualization  
 ===
 
+Data Streaming for WPI's Formula SAE Race Car
+---
+
+*** Insert screenshot of UI here ***
+
+Link to Project Dashboard: https://oporto.github.io/final/
+This project dashboard is intended for real-time data streaming for the WPI Formula SAE Race Car. The dashboard may be used by team members in the pit in order to monitor the car and its stats remotely. The design itself was inspired by car and airplane dashboards. All graphs shown on the dashboard were developed using d3.js, with a small amount of functionality and styling provided through the use of the Bulma library. Further description of the motivation and process behind the interface design may be found in the Process Book: *** Insert link to process book here ***
+
+---
+
 The key learning experience of this course is the final project. 
 You will design a web site and interactive visualizations that answer questions you have or provide an exploratory interface to some topic of your own choosing. 
 You will acquire the data, design your visualizations, implement them, and critically evaluate the results. 
