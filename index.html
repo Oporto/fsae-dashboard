@@ -47,52 +47,55 @@
       </div>
     </section>
     <section class="tile is-ancestor">
-        <div class="tile is-vertical is-6" id="leftHalf">
+        <div class="tile is-vertical is-7" id="leftHalf">
             <div class="tile is-parent" id="str_slip">
-                <div class="tile is-child is-info" id="str">
+                <div class="tile is-child box is-info" id="str">
                   <h1 class="title is-4 is-center">Steering</h1>
                   <h2 class="subtitle is-5"></h2>
                 </div>
-                <div class="tile is-child is-warning" id="slip">
+                <div class="tile is-child box is-warning" id="slip">
                   <h1 class="title is-4 is-center">Slip</h1>
                   <h2 class="subtitle is-5"></h2>
                 </div>
             </div>
             <div class="tile is-parent" id="g_z">
-                <div class="tile is-child is-danger" id="g">
+                <div class="tile is-child box is-danger" id="g">
                   <h1 class="title is-4 is-center">G Force</h1>
                   <h2 class="subtitle is-5"></h2>
                 </div>
-                <div class="tile is-child is-success" id="z">
+                <div class="tile is-child box is-success" id="z">
                   <h1 class="title is-4 is-center">Z-Tilt</h1>
                   <h2 class="subtitle is-5"></h2>
                 </div>
             </div>
             <div class="tile is-parent" id="track_p"S>
-                <div class="tile is-child is-info" id="track">
+                <div class="tile is-child box is-info" id="track">
                   <h1 class="title is-4 is-center">Track</h1>
                   <h2 class="subtitle is-5"></h2>
                 </div>
             </div>
         </div>
-        <div class="tile is-vertical is-5" id="rightHalf">
-            <div class="tile is-parent" id="gear_speed_thr">
-                <div class="tile is-child is-success" id="speed">
-                  <h1 class="title is-4 is-center">Speed</h1>
-                  <h2 class="subtitle is-5">Miles per Hour</h2>
-                </div>
-                <div class="tile is-child is-warning" id="thr">
-                  <h1 class="title is-4 is-center">Throttle</h1>
-                  <h2 class="subtitle is-5"></h2>
-                </div>
-                <div class="tile is-child is-info" id="gear">
-                  <h1 class="title is-4 is-center">Gear Shift</h1>
-                  <h2 class="subtitle is-5"></h2>
-                </div>
+        <div class="tile is-parent is-5" id="rightHalf">
+          <div class="tile is-vertical is-6 is-parent" id="gear_speed_thr">
+            <div class="tile is-child box is-success" id="speed">
+              <h1 class="title is-3 is-center">Speed</h1>
+              <h2 class="subtitle is-5">Miles per Hour</h2>
             </div>
-            <div class="tile is-parent">
-                <div class="tile is-child is-danger" id="car_plot"></div>
+            <div class="tile is-child box is-warning" id="thr">
+              <h1 class="title is-3 is-center">Throttle</h1>
+              <h2 class="subtitle is-5"></h2>
             </div>
+            <div class="tile is-child is-success" >
+            </div>
+            <div class="tile is-child is-warning" >
+            </div>
+            <div class="tile is-child is-warning" >
+            </div>
+          </div>
+          <div class="tile is-child is-4 box is-info" id="gear">
+            <h1 class="title is-4 is-center">Gear Shift</h1>
+            <h2 class="subtitle is-5"></h2>
+          </div> 
         </div>        
     </section>
   </body>
@@ -101,8 +104,8 @@
   <script src="js/z-tilt.js"></script>
   <script src="js/str.js"></script>
   <script src="js/slip.js"></script>
-  <script src="js/stream.js"></script>
   <script src="js/speed.js"></script>
   <script src="js/throttle.js"></script>
   <script src="js/gear.js"></script>
+  <script src="js/stream.js"></script>
 </html>

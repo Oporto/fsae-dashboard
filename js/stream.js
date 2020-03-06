@@ -4,10 +4,16 @@ function updateVS(){
     })
     .then((response) => response.json())
     .then((data) => {
-      updateGForce(data.gx,data.gy);
-      updateStr(data.str);
-      updateBar(data.slip);
-      updateTilt(data.tpoints, data.tilt);
+      updateGForce((Math.random()-0.5)*5,(Math.random()-0.5)*5);
+      updateStr((Math.random()-0.5)*90);
+      updateBar((Math.random()-0.5)*30);
+      
+      extend(data.tr);
+      updateThr((Math.random()));
+      updateSpeed((Math.random())*90);
+      updateGear(data.ge);
+      updateTilt(data.tpoints, [(Math.random()*10).toFixed(2),(Math.random()*10).toFixed(2)]);
+      console.log(data);
     })
     .catch((error) => {
       console.error('Error:', error);

@@ -51,11 +51,6 @@ let extend = (n) => {
     })
 }
 
-setInterval(() => {
-  extend({
-    x: (Math.random()-0.5)*20,
-    y: (Math.random()-0.5)*20
-  });
-},1000)
+
 
     

@@ -113,6 +113,3 @@ function updateGear(inputGear) {
     } 
 }
 
-setInterval(() => {
-    updateGear(Math.floor(Math.random()*gears.length));
-  }, 1000);

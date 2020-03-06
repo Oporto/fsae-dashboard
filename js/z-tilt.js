@@ -64,7 +64,13 @@ function colorize(d){
 }
 
 function updateTilt(points, tilt){
-    processData(surface(points), 200);
+    tpoints = [];
+    points.forEach(p =>{
+        zP = p.x*-1*Math.sin(tilt[0]*Math.PI/180);
+        nz = 2*(zP*Math.cos(tilt[1]*Math.PI/180) + p.y*Math.sin(tilt[1]*Math.PI/180));
+        tpoints.push({x:p.x, y:p.y, z:nz.toFixed(3)})
+      })
+    processData(surface(tpoints), 200);
     tilt_text.text(()=>{
         return "Tilt of " + tilt[0] + "° on X and " + tilt[1] + "° on Y";
     })

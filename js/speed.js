@@ -1,4 +1,4 @@
-var width_speed = window.innerWidth/4,
+var width_speed = window.innerWidth/6,
     height_speed = width_speed/3
     ,
     radius_speed = Math.max(width_speed, height_speed) /4;
@@ -23,6 +23,3 @@ function updateSpeed(angSp){
       .text((angSp).toFixed(2) + " MPH");
 }
 
-setInterval(() => {
-  updateSpeed((Math.random())*90);
-}, 1000);

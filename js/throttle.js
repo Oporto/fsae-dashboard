@@ -56,7 +56,3 @@ function updateThr(angThr){
       prevThr = angThr;
     })
 }
-
-setInterval(() => {
-  updateThr((Math.random()));
-}, 1000);
