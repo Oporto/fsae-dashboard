@@ -20,16 +20,31 @@
     <section class="hero is-info is-small is-bold">
         <div class="hero-body">
           <div class="container">
-            <h1 class="title">
+            <p class="title">
               Data Streaming for WPI's Formula SAE Race Car
-            </h1>
+            </p>
             <h2 class="subtitle">
               User interface developed by Ally Nicollela and Pedro de Vasconcellos Oporto for CS 480X - Final project
-            </h2>
-            <input class="slider is-fullwidth" step="1" min="0" max="90" value="50" type="range">
-            <output for="sliderWithValue"></output>
+            </h2>  
           </div>
         </div>
+    </section>
+    <section class="level">
+      <div class="field level-right is-full-width">
+        <h1 class="subtitle level-item">
+          Adjust refresh speed from server
+        </h1>
+        <input class="is-checkradio level-item is-danger" id="exampleRadioInline1" type="radio" name="exampleRadioInline" checked="checked">
+        <label class="level-item" for="exampleRadioInline1">200 ms</label>
+        <input class="is-checkradio level-item is-warning" id="exampleRadioInline2" type="radio" name="exampleRadioInline">
+        <label class="level-item" for="exampleRadioInline2">400 ms</label>
+        <input class="is-checkradio level-item is-success" id="exampleRadioInline3" type="radio" name="exampleRadioInline">
+        <label class="level-item" for="exampleRadioInline3">600 ms</label>
+        <input class="is-checkradio level-item is-info" id="exampleRadioInline4" type="radio" name="exampleRadioInline">
+        <label class="level-item" for="exampleRadioInline4">1000 ms</label>
+        <input class="is-checkradio level-item" id="exampleRadioInline5" type="radio" name="exampleRadioInline">
+        <label class="level-item" sfor="exampleRadioInline5">1500 ms</label>
+      </div>
     </section>
     <section class="tile is-ancestor">
         <div class="tile is-vertical is-6" id="leftHalf">
@@ -60,7 +75,7 @@
                 </div>
             </div>
         </div>
-        <div class="tile is-vertical is-6" id="rightHalf">
+        <div class="tile is-vertical is-5" id="rightHalf">
             <div class="tile is-parent" id="gear_speed_thr">
                 <div class="tile is-child is-success" id="speed">
                   <h1 class="title is-4 is-center">Speed</h1>

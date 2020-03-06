@@ -1,10 +1,11 @@
 var width_speed = window.innerWidth/4,
-    height_speed = width_speed/2,
+    height_speed = width_speed/3
+    ,
     radius_speed = Math.max(width_speed, height_speed) /4;
 
 var speed_svg = d3v5.select("#speed").append("svg").attr("height", height_speed).attr("width", width_speed)
     .append("g")
-  .attr("transform", "translate(" + width_speed / 2 + "," + height_speed/1.2+ ")");
+  .attr("transform", "translate(" + width_speed / 2 + "," + height_speed/2.4+ ")");
 
 var speedNum = speed_svg.append("text")
     .attr("x", -100)

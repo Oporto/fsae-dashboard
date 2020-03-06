@@ -10,14 +10,17 @@ var track_svg = d3.select("#track")
 
 // Below was produced using this code example: https://bl.ocks.org/basilesimon/f164aec5758d16d51d248e41af5428e4
 
-var x = d3.scaleLinear().domain([0, 10]).range([0, width]);
-var y = d3.scaleLinear().domain([0, 10]).range([10, height - 10]);
+var x = d3.scaleLinear().domain([0, 10]).range([0, width/2]);
+var y = d3.scaleLinear().domain([0, 10]).range([10, height/2 - 10]);
 
 var line = d3.line()
-    .x(function(d,i) {return x(i);})
-    .y(function(d) {return y(d);})
+    .x(function(d) {return x(Math.abs(d.x)*Math.sign(d.x));})
+    .y(function(d) {return y(Math.abs(d.y)*Math.sign(d.y));})
     .curve(d3.curveNatural)
-var data = d3.range(1).map(function(){return 0});
+var data =[{
+  x:0,
+  y:0
+}];
 var totalLength = 1;
 var path = track_svg.append("path")
     .attr("d", line(data))
@@ -25,33 +28,34 @@ var path = track_svg.append("path")
     .attr("stroke-width", "2")
     .attr("fill", "none");
 
-  let repeat = () => {
-    var data = d3.range(11).map(function(){return Math.random()*10})
+var lastTrack = {
+  x:0,
+  y:0
+}
 
-    
-
-    var totalLength = path.node().getTotalLength();
-
-    path
-      .attr("stroke-dasharray", totalLength + " " + totalLength)
-      .attr("stroke-dashoffset", totalLength)
-      .transition()
-        .duration(9000)
-        .ease(d3.easeLinear)
-        .attr("stroke-dashoffset", 0)
-        .on("end", repeat);
+let extend = (n) => {
+  totalLength = totalLength + 1;
+  tr = {
+    tx: x(Math.abs(n.x)*Math.sign(-n.x)),
+    ty: y(Math.abs(n.y)*Math.sign(-n.y))
   };
+  data.push(n);
+  path
+    .transition()
+    .duration(500)
+    .attr("d", line(data))
+    .attr("transform","translate("+tr.tx+", "+tr.ty+")")
+    .on("end",()=>{
+      console.log(tr);
+    
+    })
+}
 
-  let extend = (x,y) => {
-    totalLength = totalLength + 1;
-
-    path
-      .transition()
-      .duration(200)
-      .attr("stroke-dasharray", totalLength + " " + totalLength)
-      .attr("stroke-dashoffset", totalLength)
-      .attr("d", line(data))
-
-  }
+setInterval(() => {
+  extend({
+    x: (Math.random()-0.5)*20,
+    y: (Math.random()-0.5)*20
+  });
+},1000)
 
     
